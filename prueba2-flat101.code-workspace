@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"symfony-vscode.shellExecutable": "/bin/bash",
+		"symfony-vscode.shellCommand": "docker exec portal-asesoria-app /bin/sh -c 'cd /appdata/www && php \"$@\"' -- ",
+		"symfony-vscode.showConsoleErrors": true,
+		"php.version": "8.2",
+		"markdown.copyFiles.destination": {
+			"README.md": "README-assets/${fileName}"
+		}
+	}
+}
