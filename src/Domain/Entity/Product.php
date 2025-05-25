@@ -32,11 +32,11 @@ class Product
     #[ORM\Column]
     private ?int $id = null;
 
-    #[Groups(['product:lectura'])] // Sé que esto debería estar en el DTO ProductOutput en vez de la Entity, pero no consigo hacer que se muestre usando el DTO
+    #[Groups(['product:lectura'])] // Reconozco que esto debería estar en el DTO ProductOutput para separar la lógica de la Entity, pero no he podido dar con la clave
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
-    #[Groups(['product:lectura'])] // Sé que esto debería estar en el DTO ProductOutput en vez de la Entity, pero no consigo hacer que se muestre usando el DTO
+    #[Groups(['product:lectura'])] // Reconozco que esto debería estar en el DTO ProductOutput para separar la lógica de la Entity, pero no he podido dar con la clave
     #[ORM\Column]
     private ?float $price = null;
 

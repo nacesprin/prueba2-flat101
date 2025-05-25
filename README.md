@@ -13,6 +13,11 @@
   <br>
   <img src="README-assets/home-api.png" style="width: 50%">
 - Para lanzar tests unitarios, ejecutar `docker compose exec php ./bin/phpunit --testdox`
+
+## Punto reconocido
+- Reconozco que las excepciones (por ejemplo, al agregar dos veces el mismo producto) deben mostrarse en formato JSON y sin el stack-trace, es decir, retornar un header con código `4XX` en formato JSON normalizado como si de cualquier otra output se tratase, pero no he dado con la clave en esta ocasión :-(, ya que entorno `DEV` me generaba la excepción con las trazas típicas de un error, y en entorno `PROD` simplemente no me reportaba nada.
+- He dejado el depurador activado en el contenedor.
+
 ## Notas del candidato
 No quisiera que se redujera a solamente esta prueba la oportunidad de demostrar mis conocimientos en desarrollo web, ya que me gustaría que también pudieran considerar otros de mis varios trabajos relacionados con otras variadas tecnologías y cuyos conocimientos y experiencia he ido adquiriendo a lo largo de estos años, y me gustaría aportar a la compañía.
 
