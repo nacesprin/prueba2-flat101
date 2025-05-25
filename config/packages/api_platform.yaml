@@ -1,5 +1,6 @@
 api_platform:
-    title: Hello API Platform
+    title: Plataforma de Prueba acceso
+    description: Esta es la prueba para el acceso
     version: 1.0.0
     defaults:
         stateless: true
