@@ -6,9 +6,9 @@ namespace App\Tests\Unit\ApiProcessor;
 
 use ApiPlatform\Metadata\Delete;
 use ApiPlatform\Metadata\Post;
-use App\ApiProcessor\ProductInputProcessor;
-use App\DTO\ProductInput;
-use App\Entity\Product;
+use App\Application\DTO\ProductInput;
+use App\Domain\Entity\Product;
+use App\Infrastructure\Processor\ProductInputProcessor;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\EntityRepository;
 use PHPUnit\Framework\TestCase;
