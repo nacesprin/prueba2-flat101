@@ -16,4 +16,6 @@
 ## Notas del candidato
 No quisiera que se redujera a solamente esta prueba la oportunidad de demostrar mis conocimientos en desarrollo web, ya que me gustaría que también pudieran considerar otros de mis varios trabajos relacionados con otras variadas tecnologías y cuyos conocimientos y experiencia he ido adquiriendo a lo largo de estos años, y me gustaría aportar a la compañía.
 
-<a href="https://www.javierleal.com/portfolio" target="_blank"><img src="README-assets/tarjetas-proyectos.png" style="width: 50%"></a>
+Mi portfolio:
+
+<a href="https://www.javierleal.com/portfolio" target="_blank" title="portfolio"><img src="README-assets/tarjetas-proyectos.png" style="width: 50%" alt="portfolio"></a>
