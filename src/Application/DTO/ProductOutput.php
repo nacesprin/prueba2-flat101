@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace App\DTO;
+namespace App\Application\DTO;
 use Symfony\Component\Serializer\Attribute\Groups;
 final class ProductOutput
 {

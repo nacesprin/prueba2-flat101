@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Entity;
+namespace App\Domain\Entity;
 
 use ApiPlatform\Metadata\ApiResource;
-use App\ApiProcessor\ProductInputProcessor;
-use App\DTO\ProductInput;
-use App\DTO\ProductOutput;
-use App\Repository\ProductRepository;
+use App\Application\DTO\ProductInput;
+use App\Application\DTO\ProductOutput;
+use App\Domain\Repository\ProductRepository;
+use App\Infrastructure\Processor\ProductInputProcessor;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ProductRepository::class)]
@@ -18,10 +18,11 @@ use Doctrine\ORM\Mapping as ORM;
     processor: ProductInputProcessor::class,
     // denormalizationContext son los grupos usados para serializar los datos al escribirlos (enviar datos)
     denormalizationContext: ['groups' => ['product:escritura']],
+    
     // output es para indicar qué clase se usa para serializar los datos al leer un recurso
     output: ProductOutput::class,
     // normalizationContext son los grupos usados para serializar los datos al leerlos (mostrarlos)
-    normalizationContext: ['groups' => ['product:lectura']],
+    // normalizationContext: ['groups' => ['product:lectura']],
 )]
 class Product
 {

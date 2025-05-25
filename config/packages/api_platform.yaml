@@ -1,4 +1,7 @@
 api_platform:
+    mapping:
+        paths:
+        - '%kernel.project_dir%/src/Domain/Entity'
     title: Plataforma de Prueba acceso
     description: Esta es la prueba para el acceso
     version: 1.0.0

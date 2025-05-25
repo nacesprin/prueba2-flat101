@@ -1,15 +1,15 @@
 <?php
 declare(strict_types=1);
-namespace App\ApiProcessor;
+namespace App\Infrastructure\Processor;
 
 use ApiPlatform\Metadata\Delete;
 use ApiPlatform\Metadata\Operation;
 use ApiPlatform\Metadata\Patch;
 use ApiPlatform\Metadata\Post;
 use ApiPlatform\State\ProcessorInterface;
-use App\ApiException\ApiException;
-use App\DTO\ProductInput;
-use App\Entity\Product;
+use App\Application\DTO\ProductInput;
+use App\Domain\Entity\Product;
+use App\Infrastructure\Exception\ApiException;
 use Doctrine\Common\Collections\Criteria;
 use Doctrine\ORM\EntityManagerInterface;
 
