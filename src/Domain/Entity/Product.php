@@ -8,6 +8,7 @@ use App\Application\DTO\ProductOutput;
 use App\Domain\Repository\ProductRepository;
 use App\Infrastructure\Processor\ProductInputProcessor;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Attribute\Groups;
 
 #[ORM\Entity(repositoryClass: ProductRepository::class)]
 #[ApiResource(
@@ -22,7 +23,7 @@ use Doctrine\ORM\Mapping as ORM;
     // output es para indicar qué clase se usa para serializar los datos al leer un recurso
     output: ProductOutput::class,
     // normalizationContext son los grupos usados para serializar los datos al leerlos (mostrarlos)
-    // normalizationContext: ['groups' => ['product:lectura']],
+    normalizationContext: ['groups' => ['product:lectura']],
 )]
 class Product
 {
@@ -31,9 +32,11 @@ class Product
     #[ORM\Column]
     private ?int $id = null;
 
+    #[Groups(['product:lectura'])] // Sé que esto debería estar en el DTO ProductOutput en vez de la Entity, pero no consigo hacer que se muestre usando el DTO
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
+    #[Groups(['product:lectura'])] // Sé que esto debería estar en el DTO ProductOutput en vez de la Entity, pero no consigo hacer que se muestre usando el DTO
     #[ORM\Column]
     private ?float $price = null;
 
