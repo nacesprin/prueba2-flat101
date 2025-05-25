@@ -9,9 +9,12 @@
 - Construir con `docker compose build --no-cache` donde se crea la base de datos y genera la estructura básica.
 - Asegurarse que no existe en local el puerto 80 abierto
 - Lanzar con `docker compose up -d`
+- La primera vez lleva un rato de instalación inicial de paquetes de 10 minutos aprox.
 - Entrar en https://localhost/api y aceptar la excepción de SSL para poder entrar.
-- Lanzar tests unitarios con `docker compose exec php ./bin/phpunit --testdox`
+- Para lanzar tests unitarios, ejecutar `docker compose exec php ./bin/phpunit --testdox`
 
 
 ## Notas del candidato
 No quisiera que se redujera a solamente esta prueba la oportunidad de demostrar mis conocimientos en desarrollo web, ya que me gustaría que también pudieran considerar otros de mis varios trabajos relacionados con otras variadas tecnologías y cuyos conocimientos he ido adquiriendo a lo largo de varios años, los cuales puedo aportar para la compañía.
+
+<a href="https://www.javierleal.com/portfolio"><img src="README-assets/tarjetas-proyectos.png" style="width: 50%"></a>
