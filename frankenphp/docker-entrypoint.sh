@@ -11,15 +11,9 @@ if [ "$1" = 'frankenphp' ] || [ "$1" = 'php' ] || [ "$1" = 'bin/console' ]; then
 
     # Cargar la base de datos
     if grep -q 'sqlite' .env && [ ! -f var/sqlite2.db ]; then
-        echo "Creando base de datos SQLite en data/sqlite.db..."
-
-        php bin/console doctrine:database:create --if-not-exists
-
-        if [ "$( find ./migrations -iname '*.php' -print -quit )" ]; then
-            php bin/console doctrine:migrations:migrate --no-interaction --all-or-nothing
-        else
-            php bin/console doctrine:schema:update --force
-        fi
+        echo "Creando base de datos SQLite en data/sqlite2.db..."
+        # Crear la base de datos SQLite
+        php bin/console doctrine:schema:update --force
     fi
 
     # Permisos para Symfony
