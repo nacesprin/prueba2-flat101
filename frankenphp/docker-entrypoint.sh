@@ -9,8 +9,8 @@ if [ "$1" = 'frankenphp' ] || [ "$1" = 'php' ] || [ "$1" = 'bin/console' ]; then
 
     php bin/console -V
 
-    # Solo para entorno dev con SQLite
-    if [ "$APP_ENV" = "dev" ] && grep -q 'sqlite' .env && [ ! -f var/sqlite2.db ]; then
+    # Cargar la base de datos
+    if grep -q 'sqlite' .env && [ ! -f var/sqlite2.db ]; then
         echo "Creando base de datos SQLite en data/sqlite.db..."
 
         php bin/console doctrine:database:create --if-not-exists
