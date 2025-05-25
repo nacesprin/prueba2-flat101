@@ -7,6 +7,7 @@ use ApiPlatform\Metadata\Operation;
 use ApiPlatform\Metadata\Patch;
 use ApiPlatform\Metadata\Post;
 use ApiPlatform\State\ProcessorInterface;
+use App\ApiException\ApiException;
 use App\DTO\ProductInput;
 use App\Entity\Product;
 use Doctrine\Common\Collections\Criteria;
@@ -40,7 +41,7 @@ class ProductInputProcessor implements ProcessorInterface
         if ($operation instanceof Delete) {
             return $this->delete($data);
         }
-        throw new \RuntimeException('Método no soportado');
+        throw new ApiException('Método no soportado');
     }
     
     /**
@@ -56,7 +57,7 @@ class ProductInputProcessor implements ProcessorInterface
         $repo = $this->entityManager->getRepository(Product::class);
         $product = $repo->findOneBy(['name' => $data->name]);
         if ($product) {
-            throw new \RuntimeException('Producto ya existe');
+            throw new ApiException('Producto ya existe');
         }
         $product = new Product();
         $product->setName($data->name);
@@ -79,7 +80,7 @@ class ProductInputProcessor implements ProcessorInterface
     {
         $id = $uriVariables['id'] ?? null;
         if ($id === null) {
-            throw new \RuntimeException('ID requerido');
+            throw new ApiException('ID requerido');
         }
         // Comprobamos si el nombre del producto ya existe, excluyendo el producto actual
         $criteria = new Criteria();
@@ -89,12 +90,12 @@ class ProductInputProcessor implements ProcessorInterface
         $qb->addCriteria($criteria);
         $product = $qb->getQuery()->getResult();
         if ($product) {
-            throw new \RuntimeException('Producto ya existe');
+            throw new ApiException('Producto ya existe');
         }
         // Comprobamos si el producto por ID existe
         $product = $this->entityManager->find(Product::class, $id);
         if (!$product) {
-            throw new \RuntimeException('Producto no encontrado');
+            throw new ApiException('Producto no encontrado');
         }
         if ($data->name !== null) {
             $product->setName($data->name);
