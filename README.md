@@ -1,10 +1,10 @@
 # Prueba
-- Se ha utilizado symfony 6 headless, `platform api 3` y docker con sqlite para el desarrollo de la prueba.
+- Se ha utilizado symfony 6 headless, `platform api 3` y docker adaptado con sqlite para el desarrollo de la prueba.
 
 ## Pasos
 - Descarga esta repo. *obvio, ¿no?* :-)
 - Versión empleada de docker compose `Docker Compose version v2.35.1`
-- Construir con `docker compose build --no-cache`.
+- Construir con `docker compose build --pull --no-cache`.
 - Asegurarse que no existe en local el puerto 80 abierto. Revisar que `sudo netstat -tulpn | grep :80` no arroje nada.
 - Lanzar con `docker compose up -d`
 - La primera vez lleva un rato de instalación inicial de paquetes de 10 minutos aprox, donde también se crea la base de datos y genera la estructura básica.
