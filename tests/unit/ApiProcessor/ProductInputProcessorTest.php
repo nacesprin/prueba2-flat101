@@ -8,6 +8,7 @@ use ApiPlatform\Metadata\Delete;
 use ApiPlatform\Metadata\Post;
 use App\Application\DTO\ProductInput;
 use App\Domain\Entity\Product;
+use App\Infrastructure\Exception\ElementoExisteException;
 use App\Infrastructure\Processor\ProductInputProcessor;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\EntityRepository;
@@ -32,7 +33,7 @@ class ProductInputProcessorTest extends TestCase
         $this->processor = new ProductInputProcessor($this->entityManager);
     }
 
-    public function testPostCreatesNewProduct(): void
+    public function testPostCreaNuevoProducto(): void
     {
         $input = new ProductInput();
         $input->name = 'Nuevo Producto';
@@ -53,9 +54,9 @@ class ProductInputProcessorTest extends TestCase
         $this->assertSame(10.0, $product->getPrice());
     }
 
-    public function testPostThrowsIfProductExists(): void
+    public function testPostExcepcionSiProductoExiste(): void
     {
-        $this->expectException(\RuntimeException::class);
+        $this->expectException(ElementoExisteException::class);
         $this->expectExceptionMessage('Producto ya existe');
 
         $input = new ProductInput();
