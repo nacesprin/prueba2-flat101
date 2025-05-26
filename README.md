@@ -6,7 +6,6 @@
 - Versión empleada de docker compose `Docker Compose version v2.35.1`
 - Construir con `docker compose build --pull --no-cache`.
 - Lanzar con `docker compose up -d`
-- La primera vez lleva un rato de instalación inicial de paquetes de 10 minutos aprox, donde también se crea la base de datos y genera la estructura básica.
 - Entrar en <a href="https://localhost:4433/api" target="_blank">https://localhost:4433/api</a> y aceptar la excepción de SSL para poder entrar.
 
   <img src="README-assets/excepcion-ssl.png" style="width: 48%">
