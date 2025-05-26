@@ -61,7 +61,9 @@ CMD [ "frankenphp", "run", "--config", "/etc/frankenphp/Caddyfile" ]
 FROM frankenphp_base AS frankenphp_dev
 
 ENV APP_ENV=dev
-ENV APP_DEBUG=1
+# APP_DEBUG=1 muestra las trazas de errores en el navegador y la toolbar de Symfony
+# APP_DEBUG=0 oculta las trazas de errores (muestra el error en JSON plano) y tb la toolbar de Symfony
+ENV APP_DEBUG=0
 ENV XDEBUG_MODE=develop,debug,trace,coverage
 ENV FRANKENPHP_WORKER_CONFIG=watch
 
